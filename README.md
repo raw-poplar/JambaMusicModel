@@ -1,0 +1,2 @@
+# JambaMusicModel
+使用上下文长度极长同时增加部分注意力机制的Jamba模型和decript-audio-codec编解码器，用于LLM驱动的音频生成
