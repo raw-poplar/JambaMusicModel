@@ -3,7 +3,7 @@
 
 ## 描述
 
-这是一个模型的创建与训练的项目，训练的模型用于输入经过训练的LLM模型生成的中间值生成DAC编解码器（decript-audio-codec编解码器）的s向量并能够通过DAC编解码器转换成音频文件，中间值具体是在JambaForAudioGeneration_S_In_S_Out的StyleEncoder卷积头生成的风格向量以及大约100个时间步长（可以自己设置）的
+这是一个模型的创建与训练的项目，训练的模型用于输入经过训练的LLM模型生成的中间值生成DAC编解码器（decript-audio-codec编解码器）的s向量并能够通过DAC编解码器转换成音频文件，中间值具体是在JambaForAudioGeneration_S_In_S_Out的StyleEncoder卷积头生成的风格向量以及大约100个时间步长（可以自己设置）的。注：本项目使用linux系统。
 
 ## 功能特点
 
