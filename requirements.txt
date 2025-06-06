@@ -1,0 +1,9 @@
+torch
+torch_optimizer
+tqdm
+descript-audio-codec
+einops
+
+
+
+
