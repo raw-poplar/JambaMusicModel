@@ -35,7 +35,7 @@
 
 ## 数据准备
 
-训练数据应为 `.pt` 文件，每个文件包含一个至少名为 `'s'` 的 PyTorch 张量。该张量是来自 `descript-audio-codec` (DAC) 的编码表示。
+训练数据应为 `.pt` 文件，每个文件包含一个至少名为 `'s'` 的 PyTorch 张量。该张量是来自 `descript-audio-codec` (DAC) 的编码表示。可以使用本项目中的`JambaMusicModel/midi2wav/wav_to_pt_processor.py`转换
 
 *   **数据格式**: 's' 张量期望的原始形状为 `(1, Q, T_orig)` 或 `(Q, T_orig)` (其中 Q 是量化器数量，T_orig 是原始时间步数)，脚本内部会将其处理为 `(T_orig, Q)`。
 *   **配置路径**: 在 `train_jamba_s_in_s_out_step.py` 脚本中，确保 `DAC_PT_DIR` 变量指向包含这些 `.pt` 文件的目录。默认设置为 `/root/autodl-tmp/modelTrain/jambaDataset2`，您需要根据您的实际路径进行修改。
