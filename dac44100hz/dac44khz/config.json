@@ -1,0 +1,16 @@
+{
+  "architectures": [
+    "DAC"
+  ],
+  "auto_map": {
+    "AutoConfig": "model.DACConfig",
+    "AutoModel": "model.DAC"
+  },
+  "decoding_chunk_rate": 0.1,
+  "decoding_overlap_rate": 0.1,
+  "encoding_chunk_size_in_sec": 1,
+  "model_type": "dac",
+  "model_type_by_sampling_freq": "44khz",
+  "torch_dtype": "float32",
+  "transformers_version": "4.44.0"
+}

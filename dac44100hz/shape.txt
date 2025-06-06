@@ -1,0 +1,25 @@
+D:\pycharm\repos\NetLearn\musicTrain\auto2midi\.venv\Scripts\python.exe D:\pycharm\repos\NetLearn\musicTrain\for_trae\dac44100hz\dacTest.py 
+2025-05-02 18:48:12.505516: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2025-05-02 18:48:12.505855: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+1
+尝试从目录 './dac44khz' 手动加载 DAC 模型...
+正在从 './dac44khz\config.json' 加载配置...
+正在根据配置实例化模型...
+D:\pycharm\repos\NetLearn\musicTrain\auto2midi\.venv\lib\site-packages\audiotools\ml\layers\base.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_dict = torch.load(location, "cpu")
+D:\pycharm\repos\NetLearn\musicTrain\auto2midi\.venv\lib\site-packages\torch\nn\utils\weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+正在从 './dac44khz\model.safetensors' 加载权重...
+正在将权重应用到模型...
+模型手动加载成功！
+2
+wav shape torch.Size([2, 7968651])
+音频文件加载成功。
+使用加载的模型对 'D:\music\input\Designant. - Designant.flac' 进行编码...
+编码完成。
+zq shape: torch.Size([1, 1024, 15564])
+s shape: torch.Size([1, 9, 15564])
+wav_zq shape: torch.Size([1, 1024, 15564])
+wav_s shape: torch.Size([1, 9, 15564])
+
+进程已结束，退出代码为 0

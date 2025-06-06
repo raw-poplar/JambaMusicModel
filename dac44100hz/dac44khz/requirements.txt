@@ -1,0 +1,4 @@
+torch==2.4.0
+torchaudio==2.4.0
+transformers==4.44.0
+descript-audio-codec==1.0.0
