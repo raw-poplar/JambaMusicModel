@@ -3,7 +3,7 @@
 
 ## 描述
 
-这是一个模型的创建与训练的项目，训练的模型用于输入经过训练的LLM模型生成的中间值生成DAC编解码器（decript-audio-codec编解码器）的s向量并能够通过DAC编解码器转换成音频文件，中间值具体是在JambaForAudioGeneration_S_In_S_Out的StyleEncoder卷积头生成的风格向量以及大约100个时间步长（可以自己设置）的。注：本项目使用linux系统。
+这是一个模型的创建与训练的项目，训练的模型用于输入经过训练的LLM模型生成的中间值生成DAC编解码器（decript-audio-codec编解码器）的s向量并能够通过DAC编解码器转换成音频文件，中间值具体是JambaForAudioGeneration_S_In_S_Out的StyleEncoder卷积头生成的风格向量以及大约100个时间步长的起始s，在当前项目模型训练完后可以使用当前项目的StyleEncoder卷积头卷积得到的风格向量与原s向量训练LLM模型，从而实现两个模型的文生音频的功能。注：本项目使用linux系统。
 
 ## 功能特点
 
@@ -35,7 +35,7 @@
 
 ## 数据准备
 
-训练数据应为 `.pt` 文件，每个文件包含一个至少名为 `'s'` 的 PyTorch 张量。该张量是来自 `descript-audio-codec` (DAC) 的编码表示。可以使用本项目中的`JambaMusicModel/midi2wav/wav_to_pt_processor.py`转换
+训练数据应为 `.pt` 文件，每个文件包含一个至少名为 `'s'` 的 PyTorch 张量。该张量是来自 `descript-audio-codec` (DAC) 的编码表示。可以使用本项目中的 JambaMusicModel/midi2wav/wav_to_pt_processor.py 转换
 
 *   **数据格式**: 's' 张量期望的原始形状为 `(1, Q, T_orig)` 或 `(Q, T_orig)` (其中 Q 是量化器数量，T_orig 是原始时间步数)，脚本内部会将其处理为 `(T_orig, Q)`。
 *   **配置路径**: 在 `train_jamba_s_in_s_out_step.py` 脚本中，确保 `DAC_PT_DIR` 变量指向包含这些 `.pt` 文件的目录。默认设置为 `/root/autodl-tmp/modelTrain/jambaDataset2`，您需要根据您的实际路径进行修改。
